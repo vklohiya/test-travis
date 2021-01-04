@@ -40,8 +40,8 @@ script:
     fi
   - export CLEAN_BUILD=true
   - export BASE_OS=debian
-  - make verify
-  - make prod
+#  - make verify
+  - make prod-quick
   - docker tag "$IMG_TAG" "$BASE_PUSH_TARGET:devel-$TRAVIS_BRANCH"
   - docker tag "$IMG_TAG" "$BASE_PUSH_TARGET:devel-$TRAVIS_BRANCH-n-$TRAVIS_BUILD_NUMBER-id-$TRAVIS_BUILD_ID"
   - |
@@ -58,7 +58,7 @@ script:
       docker push "$BASE_PUSH_TARGET:$BUILD_VERSION-$BUILD_INFO"
       docker push "$BASE_PUSH_TARGET:latest"
     fi
-  - make docs
+#  - make docs
 
 notifications:
   slack:
