@@ -20,6 +20,7 @@ WKDIR=$(mktemp -d /tmp/docker-build.XXXX)
 VERSION_BUILD_ARGS=$(${CURDIR}/version-tool.py docker-build-args)
 VERSION_INFO=$(${CURDIR}/version-tool.py version)
 
+echo "cp -rf $CURDIR/../../f5-ipam-ctlr $WKDIR/"
 cp -rf $CURDIR/../../f5-ipam-ctlr $WKDIR/
 
 NO_CACHE_ARGS=""
